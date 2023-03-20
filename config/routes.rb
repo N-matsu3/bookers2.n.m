@@ -9,7 +9,7 @@ get 'users/show'
 get 'users/edit'
 
 
-resources :books, only:[:new, :index, :show, :create]
+resources :books, only:[:new, :index, :show, :create, :destroy, :edit]
 resources :users, only: [:show, :edit]
 
 end

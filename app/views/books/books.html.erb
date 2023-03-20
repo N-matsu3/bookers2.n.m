@@ -1,26 +1,10 @@
 <!DOCTYPE html>
 <html>
-<h1>Books</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
-        <td><%= link_to 'Show', "/books/#{book.id}" %></td>
-        <td><%= link_to "Edit", "/books/#{book.id}/edit"%></td>
-      <!--%= link_to "Destroy",  destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure?"  -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class=user>
+  <h1>Users info</h1>
+  <div><%= image_tag'sample-author1.jpg'%></div>
+  <p>name</p>
+  <p>introduction</p>
 
   <h2>New Book</h2>
 <% if @book.errors.any? %>
@@ -35,11 +19,41 @@
   <div class ="new-book">Title</div>
   <%= f.text_field :title %>
 
-  <div class ="new-book">Body</div>
+  <div class ="new-book">Opinion</div>
   <%= f.text_area :body %>
 
 <div class="button"><%= f.submit '  Create Book  '%></div>
 
 <% end %>
+
+</div>
+<h2>Books</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>  </th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @books.each do |book| %>
+      <tr>
+        <td><%= image_tag'sample-author1.jpg'%>
+            <!--%= link_to "Edit", "/users/#{user.id}/edit"%-->
+        </td>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td><%= link_to "Edit", "/books/#{book.id}/edit"%></td>
+        <td><% if @book.user == current_user %>
+            <%= link_to "Destroy",  destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure?"%>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 </html>
