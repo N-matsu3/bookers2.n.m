@@ -7,6 +7,7 @@ get 'homes/about' => 'homes#about' , as:"about"
 
 get 'users/show'
 get 'users/edit'
+get '/users' => 'users#users' , as:"users"
 
 
 resources :books, only:[:new, :index, :show, :create, :destroy, :edit]
