@@ -8,6 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :encrypted_password, null: false, default: ""
       t.string "name"
       t.text "introduction"
+  
       
 
       ## Recoverable
@@ -36,6 +37,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
       
       t.string :name
+      t.text :introduction
 
 
       t.timestamps null: false
