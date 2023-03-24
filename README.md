@@ -67,3 +67,6 @@ bookers2作成開始！
 2023/03/22
     <% if @book.errors.any? %>
     user show 
+
+2023/03/24
+🍚　レイアウト
