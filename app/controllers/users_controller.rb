@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def new
     @book = Book.new
+    @user = User.new(user_params)
   end
 
   def create
@@ -38,28 +39,27 @@ class UsersController < ApplicationController
   end
 
   def update
-    @book = Book.find(params[:id])
-
-    if @book.update(book_params)
-       flash[:notice] = "Book was successfully created."
-
-      redirect_to book_path(@book.id)
+    @user = User.find(params[:id])
+    if @user.update(users_params)
+      flash[:notice] = "successfully"
+      redirect_to user_path(@user.id)
     else
       render :edit
     end
+
   end
 
 
   def destroy
-    book = Book.find(params[:id])
+    @book = Book.find(params[:id])
     book.destroy
     redirect_to '/books'
   end
 
    private
 
-  def book_params
-    params.require(:book).permit(:title, :body)
+  def users_params
+    params.require(:user).permit(:name, :introduction)
   end
 
 

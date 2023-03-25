@@ -6,6 +6,10 @@
   <p>name</p>
   <p>introduction</p>
 
+<% if @user == current_user %>
+  <%= link_to "Edit", "/users/#{@user.id}/edit"%>
+<% end %>
+
   <h2>New Book</h2>
 <% if @book.errors.any? %>
   <%= @book.errors.count %> errors prohibited this book from being saved:
@@ -41,7 +45,6 @@
   <% @books.each do |book| %>
       <tr>
         <td><%= image_tag'sample-author1.jpg'%>
-            <%= link_to "user_name","/users/#{user.id}" %>
         </td>
         <td><%= book.title %></td>
         <td><%= book.body %></td>
