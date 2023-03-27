@@ -1,3 +1,7 @@
+<div class="flash">
+  <%= flash[:notice] %>
+</div>
+
 <h1>New Book</h1>
   <%= form_with model: @newbook do |f| %>
 
@@ -27,7 +31,7 @@
         <td><%= @book.body %></td>
         <td><%= link_to "Edit", "/books/#{@book.id}/edit"%></td>
         <td><% if @book.user == current_user %>
-            <%= link_to "Destroy",  "destroy_book_path(@book)", method: :delete, "data-confirm" => "Are you sure?"%>
+            <%= link_to "Destroy",  book_path(@book), method: :delete, "data-confirm" => "Are you sure?"%>
             <% end %>
         </td>
       </tr>

@@ -9,12 +9,11 @@ get  'users/:id' => 'users#show'
 get 'users/edit'
 
 patch 'users/:id' => 'users#update' , as: 'update_user'
-delete 'users/:id' => 'users#destroy', as: 'destroy_user'
+patch 'books/:id' => 'books#update' , as: 'update_book'
 
 
-delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 
-resources :books, only:[:new, :index, :show, :create, :edit]
+resources :books, only:[:new, :index, :show, :create, :destroy ,:edit]
 resources :users, only: [:show, :edit]
 
 end
