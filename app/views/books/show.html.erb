@@ -39,7 +39,10 @@
   </thead>
   <tbody>
       <tr>
-        <td><%= image_tag @user.get_profile_image(100,100) %>
+        <td><%= link_to @users_path do %>
+          <%= image_tag @user.get_profile_image(100,100) %></br>
+          <%= @user.name%>
+            <% end %>
         </td>
         <td><%= @book.title %></td>
         <td><%= @book.body %></td>
