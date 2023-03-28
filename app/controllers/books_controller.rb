@@ -13,6 +13,7 @@ class BooksController < ApplicationController
     @newbook = Book.new
     @book = Book.find(params[:id])
     @user = @book.user = current_user
+    @books = Book.all
 
   end
 
@@ -48,8 +49,6 @@ class BooksController < ApplicationController
     else
       render :edit
     end
-
-    @user = User.find(params[:id])
 
   end
 

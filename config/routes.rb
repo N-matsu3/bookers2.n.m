@@ -5,6 +5,8 @@ root to: "homes#top"
 get '/books' => 'books#index' , as:"books"
 
 
+get '/users' => 'users#index ', as:"users"
+
 get  'users/:id' => 'users#show'
 get 'users/edit'
 

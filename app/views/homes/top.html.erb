@@ -1,7 +1,21 @@
 <!DOCTYPE html>
-<h1>welcome to <strong>Bookers</strong>!!</h1>
-<p>In Bookers,</br>
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/377c488508.js" crossorigin="anonymous"></script>
+  </head>
+
+  <header>
+  <div class="social"></div>
+</header>
+<h1>welcome to <strong><i class="fa-solid fa-book"></i>Bookers</strong>!!</h1>
+<p>In <strong><i class="fa-solid fa-book"></i>Bookers</strong>,</br>
 
 you can share and exchange your opinions , inpressions , and emotions</br>
 
 about various books!</p>
+
+<%= link_to "Log in", new_user_session_path %></br>
+<%= link_to "Sign up",  new_user_registration_path %>
+
+</html>
+
