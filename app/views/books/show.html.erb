@@ -39,12 +39,15 @@
   </thead>
   <tbody>
       <tr>
-        <td><%= link_to @users_path do %>
-          <%= image_tag @user.get_profile_image(100,100) %></br>
-          <%= @user.name%>
+       <td><%= link_to user_path(@book.user.id) do %>
+          <%= image_tag @book.user.get_profile_image(100,100) %></br>
+          <%= @book.user.name%>
             <% end %>
         </td>
-        <td><%= @book.title %></td>
+        <td><%= link_to @book_path do %>
+          <%= @book.title %>
+            <% end %>
+        </td>
         <td><%= @book.body %></td>
         <td><%= link_to "Edit", "/books/#{@book.id}/edit"%></td>
         <td><% if @book.user == current_user %>
