@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
     <script src="https://kit.fontawesome.com/377c488508.js" crossorigin="anonymous"></script>
-  </head>
+    </head>
 
-  <header>
-  <div class="social"></div>
-</header>
-<h1>welcome to <strong><i class="fa-solid fa-book"></i>Bookers</strong>!!</h1>
-<p>In <strong><i class="fa-solid fa-book"></i>Bookers</strong>,</br>
+    <header>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <div class="social"></div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto col-10 col-sm-9 col-lg-7 col-xl-5">
+        <h1>welcome to <strong><i class="fa-solid fa-book"></i>Bookers</strong>!!</h1>
+          <p>In <strong><i class="fa-solid fa-book"></i>Bookers</strong>,</br>
 
-you can share and exchange your opinions , inpressions , and emotions</br>
+            you can share and exchange your opinions , inpressions , and emotions</br>
 
-about various books!</p>
+             about various books!</p>
+          <div class="border col-8 mx-auto">
+            <div class="row">
 
-<%= link_to "Log in", new_user_session_path %></br>
-<%= link_to "Sign up",  new_user_registration_path %>
+              <%= link_to "Log in", new_user_session_path,class: "btn btn-info btn-sm btn-block" %>
+              <%= link_to "Sign up",  new_user_registration_path ,class: "btn btn-success btn-sm btn-block"%>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <footer>
+       <div class="container col-6 mx-auto">CopyRight Infratop.inc</div>
+      </footer>
+
+    </div>
 
 </html>
 

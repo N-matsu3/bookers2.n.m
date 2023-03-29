@@ -1,6 +1,10 @@
-<h2>Log in</h2>
 
-<%= form_with model:@user, url: user_session_path do |f| %>
+<div class="container">
+  <div class="row">
+   <div class="col-10 ml-5 " >
+
+     <h2>Log in</h2>
+     <%= form_with model:@user, url: user_session_path do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
@@ -18,8 +22,11 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in" ,class: "btn btn-primary btn-sm"%>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+  </div>
+ </div>
+</div>

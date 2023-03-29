@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
-<div class="flash">
-  <%= flash[:notice] %>
-</div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
+<main>
+<div class="container px-5">
+  <div class="row">
+    <div class="col-md3">
 <div class="user">
   <h4>User info</h4>
   <%= image_tag @user.get_profile_image(100,100) %>
@@ -33,12 +36,17 @@
   <div class ="new-book">Opinion</div>
   <%= f.text_area :body %>
 
-<div class="button"><%= f.submit '  Create Book  '%></div>
+<div class="button"><%= f.submit '  Create Book  ' ,class: "btn btn-success btn-sm "%></div>
 
 <% end %>
 
 </div>
 
+ </div>
+</div>
+
+
+<div class="col-md-8">
 <h4>Books</h4>
 
 <table>
@@ -52,18 +60,21 @@
   <tbody>
  <% @books.each do |book| %>
       <tr>
-        <td>
-          <%= image_tag @user.get_profile_image(80,80) %>
+        <td><%= link_to user_path(book.user.id) do %>
+          <%= image_tag book.user.get_profile_image(80,80) %>
+            <% end %>
         </td>
-        <td> <td><%= link_to book_path(book) do %>
+         <td><%= link_to book_path(book) do %>
            <%= book.title %>
              <% end %></td>
         <td><%= book.body %></td>
-        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 
+</div>
+
+</main>
 </html>
