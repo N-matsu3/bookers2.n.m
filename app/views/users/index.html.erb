@@ -7,7 +7,9 @@
   <p>name  <%= @user.name %></p>
   <p>introduction</p>
 <% if @user == current_user %>
-  <%= link_to "Edit", "/users/#{@user.id}/edit"%>
+  <%= link_to edit_user_path(@user.id) , class: 'btn btn-outline-secondary btn-block' do %>
+  <i class="fas fa-user-cog"></i>
+  <% end %>
 <% end %>
 
   <h2>New Book</h2>
