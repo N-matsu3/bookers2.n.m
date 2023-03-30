@@ -1,39 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <h1>User index</h1>
-<div class=user>
-  <h1>User info</h1>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <p>name  <%= @user.name %></p>
-  <p>introduction</p>
-<% if @user == current_user %>
-  <%= link_to edit_user_path(@user.id) , class: 'btn btn-outline-secondary btn-block' do %>
-  <i class="fas fa-user-cog"></i>
-  <% end %>
-<% end %>
+ <div class="container px-5">
+  <div class="row">
+    <div class="col-md-3">
 
-  <h2>New Book</h2>
-<% if @book.errors.any? %>
-  <%= @book.errors.count %> errors prohibited this book from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+      <%= render 'sideuser', user: @user %>
+      <%= render 'sidenew', book: @book %>
 
-<%= form_with model: @book do |f| %>
-  <div class ="new-book">Title</div>
-  <%= f.text_field :title %>
+　　</div>
 
-  <div class ="new-book">Opinion</div>
-  <%= f.text_area :body %>
 
-<div class="button"><%= f.submit '  Create Book  '%></div>
-
-<% end %>
-
-</div>
+<div class="col-md-8 offset-md-1">
 <h2>Books</h2>
 
 <table>
@@ -58,3 +35,6 @@
 
 
 </html>
+</div>
+</div>
+</div>
