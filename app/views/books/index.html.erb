@@ -4,9 +4,18 @@
 <html>
   <div class="row">
     <div class="col-md-3">
+
+ <% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <!--ここから-->
 <%= render 'sideuser', user: @user %>
-
 
 <%= render 'sidenew', newbook: @newbook %>
 
